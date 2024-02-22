@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <article class="card">
+        <div class="card-body">
+            <img src="{{ asset('img/' ~ post.picture) }}" class="card-img-top" alt="{{ post.title }}">
+            <div class="card-body">
+                <h1 class="card-title">{{ post.title }}</h1>
+                <div class="card-text">
+                    <p>{{ post.content }}</p>
+                    <p class="text-muted">By {{ post.user.username }} the {{ post.createdDate | date('d-m-Y H:i') }}
+                        {% if post.modifiedDate %} | Modified the {{ post.modifiedDate | date('d/m/y H:i') }}{% endif %}</p>
+
+
+
+                    {% if post.user == app.user %}
+                        <a href="{{ path('post_edit', {'id': post.id}) }}" class="btn btn-primary">Edit (piaf?)</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </article>
+{% endblock %}
+
+{% block title %}
+    {{ post.title }}
+{% endblock %}
+

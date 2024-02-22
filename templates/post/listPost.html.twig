@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <section class="container mt-5">
+        <div class="row">
+            {% for post in posts %}
+                <div class="col-md-4">
+                    <article class="card mb-4">
+                        <div class="card-body">
+                            <a href="{{ path('post_detail', {'id': post.id}) }}" class="card-link" title="Voir les détails de {{ post.title }} | de {{ post.user.username }}">
+                                <h2 class="card-title">{{ post.title }}</h2>
+                                <p class="card-text">Par {{ post.user.username }}</p>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+{% endblock %}
+
+{% block title %}
+    Posts
+{% endblock %}
+

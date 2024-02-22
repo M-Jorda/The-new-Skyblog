@@ -1,0 +1,18 @@
+<div class="collapse navbar-collapse"></div>
+<ul class="navbar-nav ml-auto">
+    <li class="nav-item"><a href="{{ path('main_home') }}" class="nav-link">Home</a></li>
+
+    {% if app.user %}
+        <li class="nav-item"><a href="{{ path('post_create') }}" title="Create a post" class="nav-link">What do you think?</a></li>
+        <li class="nav-item"><a href="{{ path('app_logout') }}" title="LogOut" class="nav-link">See you</a></li>
+        <li class="nav-item"><a href="{{ path('post_list') }}" title="Posts List" class="nav-link">What's up?</a></li>
+
+    {% else %}
+        <li class="nav-item"><a href="{{ path('app_login') }}" title="Login" class="nav-link">Welcome back</a></li>
+        <li class="nav-item"><a href="{{ path('app_register') }}" title="Register" class="nav-link">Do I know you?</a></li>
+    {% endif %}
+
+
+    <li class="nav-item"><a href="#" class="nav-link"></a></li>
+    <li class="nav-item"><a href="#" class="nav-link"></a></li>
+</ul>

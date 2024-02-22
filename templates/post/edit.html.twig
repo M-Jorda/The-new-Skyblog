@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <section class="card">
+        <div class="card-body">
+            {{ form_start(form) }}
+            {{ form_widget(form) }}
+            <button>Ok, I'm good now</button>
+            {{ form_end(form) }}
+
+        </div>
+    </section>
+{% endblock %}
+
+{% block title %}Edit{% endblock %}
